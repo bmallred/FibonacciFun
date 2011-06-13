@@ -5,14 +5,14 @@ Created on Jun 10, 2011
 @author: BMAllred
 '''
 
-import FibonacciBinet
-import FibonacciDjikstra
-import FibonacciGenerator
-import FibonacciIteration
-import FibonacciLucas
-import FibonacciMatrix
-import FibonacciMemory
-import FibonacciRecursive
+import mathex.fibonacci.Binet as Binet
+import mathex.fibonacci.Djikstra as Djikstra
+import mathex.fibonacci.Generator as Generator
+import mathex.fibonacci.Iteration as Iteration
+import mathex.fibonacci.Lucas as Lucas
+import mathex.fibonacci.Matrix as Matrix
+import mathex.fibonacci.Memory as Memory
+import mathex.fibonacci.Recursive as Recursive
 from StopWatch import StopWatch
 
 def displayMenu():
@@ -36,9 +36,9 @@ def displayMenu():
             break
         
         if choice == "1":
-            SingleTest()
+            singleTest()
         elif choice == "2":
-            Benchmark()
+            benchmark()
         else:
             print "Incorrect selection."
         
@@ -48,7 +48,7 @@ def displayMenu():
     print "Hope you had as much as I did!"
     print
 
-def Benchmark():
+def benchmark():
     print
     print "Select your poison:"
     print
@@ -81,7 +81,7 @@ def Benchmark():
             print "Binet's formula"
             
             while completed < n:
-                FibonacciBinet.fib(completed)
+                Binet.fib(completed)
                 completed += 1
         except:
             pass
@@ -98,7 +98,7 @@ def Benchmark():
             print "Djikstra's method"
             
             while completed < n:
-                FibonacciDjikstra.fib(completed)
+                Djikstra.fib(completed)
                 completed += 1
         except:
             pass
@@ -115,7 +115,7 @@ def Benchmark():
             print "Iteration"
             
             while completed < n:
-                FibonacciIteration.fib(n)
+                Iteration.fib(n)
                 completed += 1
         except:
             pass
@@ -132,7 +132,7 @@ def Benchmark():
             print "Lucas' numbers"
             
             while completed < n:
-                FibonacciLucas.fib(n)
+                Lucas.fib(n)
                 completed += 1
         except:
             pass
@@ -149,7 +149,7 @@ def Benchmark():
             print "Matrix"
             
             while completed < n:
-                FibonacciMatrix.fib(n)
+                Matrix.fib(n)
                 completed += 1
         except:
             pass
@@ -166,7 +166,7 @@ def Benchmark():
             print "Memory"
             
             while completed < n:
-                FibonacciMemory.fib(n)
+                Memory.fib(n)
                 completed += 1
         except:
             pass
@@ -183,7 +183,7 @@ def Benchmark():
             print "Recursive (intensive)"
             
             while completed < n:
-                FibonacciRecursive.fib(n)
+                Recursive.fib(n)
                 completed += 1
         except:
             pass
@@ -191,7 +191,7 @@ def Benchmark():
             print "\tCompleted: {0}% in {1} ms".format((1.0 * completed / n) * 100, stopWatch.TotalMilliseconds())
             print
 
-def SingleTest():
+def singleTest():
     print
     print "Select your poison:"
     print
@@ -220,19 +220,19 @@ def SingleTest():
     try:
         # Perform the necessary method.
         if choice == "1":
-            answer = FibonacciBinet.fib(n)
+            answer = Binet.fib(n)
         elif choice == "2":
-            answer = FibonacciDjikstra.fib(n)
+            answer = Djikstra.fib(n)
         elif choice == "3":
-            answer = FibonacciIteration.fib(n)
+            answer = Iteration.fib(n)
         elif choice == "4":
-            answer = FibonacciLucas.fib(n)
+            answer = Lucas.fib(n)
         elif choice == "5":
-            answer = FibonacciMatrix.fib(n)
+            answer = Matrix.fib(n)
         elif choice == "6":
-            answer = FibonacciMemory.fib(n)
+            answer = Memory.fib(n)
         elif choice == "7":
-            answer = FibonacciRecursive.fib(n)
+            answer = Recursive.fib(n)
     except:
         pass
     
